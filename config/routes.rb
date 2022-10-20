@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'main/login'
+  post 'main/create'
   resources :scores
   resources :students
   get "students/:id/edit_score", to: "students#edit_score"

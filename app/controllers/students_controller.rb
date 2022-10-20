@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: %i[ show edit update destroy ]
-
+  before_action :must_be_logged_in, except: [:edit_score, :index]
+  #before_action :set_student, only: %i[ show edit update destroy ]
+  
   # GET /students or /students.json
   def index
     @students = Student.all
